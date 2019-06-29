@@ -75,14 +75,18 @@ var fs = require('fs')
 /*7. fs.rename() 重命名
 
 */
-fs.rename('./fs/1.html', './fs/html/1.html', (err) => {
-    if (err) console.log(err)
-    console.log('重命名成功!')
-})
+// fs.rename('./fs/1.html', './fs/html/1.html', (err) => {
+//     if (err) console.log(err)
+//     console.log('重命名成功!')
+// })
 
 /* 8. fs.rmdir() 删除目录 */
-fs.rmdir('html5', (err) => {
-        if (err) console.log('删除失败！')
-        console.log('删除成功！')
-    })
-    /* 9. fs.unlink() 删除文件 */
+// fs.rmdir('html5', (err) => {
+//         if (err) console.log('删除失败！')
+//         console.log('删除成功！')
+//     })
+/* 9. fs.unlink() 删除文件 */
+fs.unlink('index.txt', (err) => {
+    if (err) console.log('删除失败！')
+    console.log('删除成功！')
+})
