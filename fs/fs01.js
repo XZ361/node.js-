@@ -57,7 +57,16 @@ var fs = require('fs')
     5. fs.readFile() 读取文件
 
 */
-fs.readFile('index.txt', (err, data) => {
+// fs.readFile('index.txt', (err, data) => {
+//     if (err) console.log(err)
+//     console.log('读取成功！' + data)
+// })
+
+/* 6. fs.readdir() 读取目录
+
+*/
+
+fs.readdir('html5', (err) => {
     if (err) console.log(err)
-    console.log('读取成功！' + data)
+    console.log('读取目录成功！')
 })
