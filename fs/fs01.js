@@ -63,10 +63,19 @@ var fs = require('fs')
 // })
 
 /* 6. fs.readdir() 读取目录
+    把目录和目录下的文件都获取到
 
 */
 
-fs.readdir('./fs/html', (err, data) => {
+// fs.readdir('./fs/html', (err, data) => {
+//     if (err) console.log(err)
+//     console.log('读取目录成功！' + data)
+// })
+
+/*7. fs.rename() 重命名
+
+*/
+fs.rename('./fs/1.html', './fs/html/1.html', (err) => {
     if (err) console.log(err)
-    console.log('读取目录成功！' + data)
+    console.log('重命名成功!')
 })
