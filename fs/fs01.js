@@ -86,7 +86,7 @@ var fs = require('fs')
 //         console.log('删除成功！')
 //     })
 /* 9. fs.unlink() 删除文件 */
-fs.unlink('index.txt', (err) => {
-    if (err) console.log('删除失败！')
-    console.log('删除成功！')
-})
+// fs.unlink('index.txt', (err) => {
+//     if (err) console.log('删除失败！')
+//     console.log('删除成功！')
+// })
