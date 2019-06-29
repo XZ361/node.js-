@@ -48,16 +48,16 @@ var fs = require('fs')
 /* 如果t.txt不存在，函数执行后直接创建文件添加内容
 如果t.txt已经存在，则每次执行函数后，都会在原有的内容后追加内容 */
 
-fs.appendFile('./fs/t.txt', '\n这是追加的句子\n', 'utf-8', (err) => {
-    if (err) console.log(err);
-    console.log('写入文件成功！')
-})
+// fs.appendFile('./fs/t.txt', '\n这是追加的句子\n', 'utf-8', (err) => {
+//     if (err) console.log(err);
+//     console.log('写入文件成功！')
+// })
 
 /* 
     5. fs.readFile() 读取文件
 
 */
-// fs.readFile('./fs/t.txt', (err, data) => {
-//     if (err) console.log(err)
-//     console.log('读取成功！' + data)
-// })
+fs.readFile('index.txt', (err, data) => {
+    if (err) console.log(err)
+    console.log('读取成功！' + data)
+})
