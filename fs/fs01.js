@@ -66,7 +66,7 @@ var fs = require('fs')
 
 */
 
-fs.readdir('html5', (err) => {
+fs.readdir('./fs/html', (err, data) => {
     if (err) console.log(err)
-    console.log('读取目录成功！')
+    console.log('读取目录成功！' + data)
 })
