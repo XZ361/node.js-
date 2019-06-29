@@ -38,8 +38,17 @@
 
 var fs = require('fs')
 
-fs.writeFile('index1.txt', 'hello, node.js ,你好!', (err) => {
+// fs.writeFile('index1.txt', 'hello, node.js ,你好!', (err) => {
+//     if (err) console.log(err);
+//     console.log('写入文件成功！')
+
+// })
+
+// 4.fs.appendFile 追加文件
+/* 如果t.txt不存在，函数执行后直接创建文件添加内容
+如果t.txt已经存在，则每次执行函数后，都会在原有的内容后追加内容 */
+
+fs.appendFile('./fs/t.txt', '\n这是追加的内容\n', (err) => {
     if (err) console.log(err);
     console.log('写入文件成功！')
-
 })
