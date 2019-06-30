@@ -35,16 +35,23 @@ fs.readdir('fsDemo', (err, files) => {
         console.log(files);
 
         (function getFile(i) {
-            fs.stat(files[i], (error, stats) => {
+            if (i == files.length) {
+                console.log(filesArr)
+                return false
+            }
+            fs.stat('./fsDemo/' + files[i], (error, stats) => {
                 // 异步函数只有在上步程序完成后才会执行
-                /* if(error){
+                if (error) {
                     console.log(error)
-                }else{
-                    if(stats.isDirectory()){
+                } else {
+                    if (stats.isDirectory()) {
+                        // 判断当前是一个目录还是文件，若果是目录就加入数组
                         filesArr.push(files[i])
                     }
-                } */
-                console.log(files[i])
+                }
+                // console.log(files[i])
+                // 递归调用
+                getFile(i + 1)
 
             })
         })(0)
