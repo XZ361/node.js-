@@ -54,8 +54,7 @@ http.createServer((req, res) => {
 
                 // 响应头
                 var mime = mimeModel.getMime(extname); //获取文件类型
-                console.log(mime)
-                res.writeHead(200, { "Content-Type": +mime + ";charset='utf-8' " });
+                res.writeHead(200, { "Content-Type": "" + mime + ";charset='utf-8' " });
 
                 res.write(result);
                 res.end() //结束响应
@@ -67,4 +66,4 @@ http.createServer((req, res) => {
 
 
 
-}).listen('8001')
+}).listen(8001)
