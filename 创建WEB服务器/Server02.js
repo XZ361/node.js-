@@ -14,9 +14,7 @@ var url = require('url')
 
 // 引入自定义模块,获取`得到后缀名`的函数
 
-var mimeModel = require('./model/getMime.js');
-
-
+var mimeModel = require('./model/getmime.js');
 
 http.createServer((req, res) => {
 
@@ -41,27 +39,28 @@ http.createServer((req, res) => {
         fs.readFile('./创建WEB服务器/static/' + pathname, (err, result) => {
 
             if (err) {
-                res.writeHead(404, { "Content-Type": 'text/html;charset=utf8' });
                 fs.readFile('./创建WEB服务器/static/404.html', (error, data) => {
                     if (error) {
                         console.log(error)
                         return
                     }
-                    res.write(data)
+                    res.writeHead(404, { "Content-Type": "text/html;charset='utf-8' " });
+
+                    res.write(data);
+                    res.end() //结束响应
                 })
             } else {
                 // 这就实现了最基本的静态web服务
 
                 // 响应头
-                var mime = mimeModel.getMime(extname) //获取文件类型
-
-                res.writeHead(200, { "Content-Type": +mime + ';charset=utf8' });
+                var mime = mimeModel.getMime(extname); //获取文件类型
+                console.log(mime)
+                res.writeHead(200, { "Content-Type": +mime + ";charset='utf-8' " });
 
                 res.write(result);
                 res.end() //结束响应
             }
         })
-        console.log(pathname);
 
 
     }
