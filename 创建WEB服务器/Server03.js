@@ -22,7 +22,8 @@ http.createServer((req, res) => {
     // res.write('hello node.js')
     // http://localhost:8001/news.html       /news.html
     // http://localhost:8001/index.html      /index.html
-
+    //json/ab.json?23896492823              json/ab.json
+    
     var pathname = url.parse(req.url).pathname;
 
     // 过滤请求
