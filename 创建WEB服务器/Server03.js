@@ -9,7 +9,7 @@ var http = require('http')
 var fs = require('fs')
     // 引入path模块，可以拿到请求文件的后缀名
 var path = require('path')
-
+    // 引入url模块
 var url = require('url')
 
 // 引入自定义模块,获取`得到后缀名`的函数
@@ -23,7 +23,7 @@ http.createServer((req, res) => {
     // http://localhost:8001/news.html       /news.html
     // http://localhost:8001/index.html      /index.html
 
-    var pathname = req.url;
+    var pathname = url.parse(req.url).pathname;
 
     // 过滤请求
     if (pathname == '/') {
